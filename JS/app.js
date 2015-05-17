@@ -35,8 +35,9 @@ MyApp.factory('DashboardService', ['$http', function ($http) {
         return Data;
     };
 
-    DashboardFactory.GetData = function (start_index,limit) {
-        return Data.slice(start_index,limit);
+    DashboardFactory.GetData = function (start_index, limit) {
+        var items = Data.slice(start_index, limit);;
+        return items;
     };
 
 

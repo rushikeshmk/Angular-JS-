@@ -1,8 +1,7 @@
 ﻿
 MyApp.controller('VendorCtrl', ['$scope','DashboardService', function ($scope, DashboardService) {
     $scope.message = "Vendor Page";
-    $scope.CustData = DashboardService.GetData(0, 5);
-    console.log($scope.CustData);
+    $scope.CustData = DashboardService.GetData(0, 5);    
     $scope.edit = false;
     $scope.limit = 5;
    
@@ -19,18 +18,19 @@ MyApp.controller('VendorCtrl', ['$scope','DashboardService', function ($scope, D
         console.log(index);
         DashboardService.RemoveItem(index);
     };
+
     $scope.UpdateCust = function (index, Data) {
         DashboardService.UpdateItem(index, Data);
         $scope.CustData = DashboardService.GetData();
     };
 
     $scope.ShowMoreItems = function (start_index, no_of_items)
-    {        
-        //$scope.limit += no_of_items;
-
-        $scope.CustData += DashboardService.GetMoreItems(start_index, no_of_items);
-        console.log("CustData");
-        console.log($scope.CustData);
+    {                
+        var items = DashboardService.GetMoreItems(start_index, no_of_items);        
+        for (var i = 0 ; i < items.length ; i++)
+        {
+            $scope.CustData.push(items[i]);
+        }
     }
 
 }]);

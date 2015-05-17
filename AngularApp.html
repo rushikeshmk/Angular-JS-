@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script src="JS/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/Controllers.js"></script>
+    <script src="Content/bootstrap/js/bootstrap.js"></script>
+    <link href="Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body data-ng-app="MyApp" class="container">
+    <div class="collapse navbar-collapse" id="navbar-collapse" style="margin-bottom:10px;">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#Dashboard">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="#Vendor">Vendors</a></li>
+        </ul>
+    </div>
+        <div data-ng-view></div>
+</body>
+</html>
